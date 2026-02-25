@@ -1,8 +1,8 @@
 function setup(){
-    cnv = new Canvas(100, 100);
+   	console.log("setup: ");
+    cnv = new Canvas(1000, 1000);
     cube = new Sprite(50, 50, 50, 50);
-
-cube.color = 'green';
+    cube.color = 'green';
 }
 function draw(){
      background = lightgreen;
