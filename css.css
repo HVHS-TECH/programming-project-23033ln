@@ -3,20 +3,22 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 50vh;
   margin: 0;
-  background-color: #f0f0f0;
+  background-color: #81bb97;
 }
 
 .container {
   display: flex;
   gap: 20px;
+  text-align: center;
 }
 
 .column {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-direction:row;
+  gap: 100px;
+  
 }
 
 button {
@@ -25,10 +27,11 @@ button {
   cursor: pointer;
   border: none;
   border-radius: 5px;
-  background-color: #007bff;
+  background-color: #001aff;
   color: #fff;
   transition: background-color 0.3s;
-  width: 220px; /* Set a fixed width */
+  height: 150px;
+  width: 150px; /* Set a fixed width */
   text-align: center;
 }
 
@@ -39,4 +42,5 @@ button:hover {
 h1 {
   color: black;
   text-align:center;
+  font-size: 100px;
 }
