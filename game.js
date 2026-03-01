@@ -9,7 +9,7 @@ function setup() {
 }
 function draw(){
     background('lightgreen'); 
-     if(kb.pressing(Space,up)){
+     if(kb.pressing(Space,up,w)){
         vel = +3
      } else {
         vel = -1
