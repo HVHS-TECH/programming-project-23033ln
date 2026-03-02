@@ -1,14 +1,14 @@
 function setup() {
 	console.log("setup: ");
-     cnv = new Canvas(1200, 1100);
-	 rect = new Sprite(20, 20, 400, 100);
+     cnv = new Canvas(1500, 1000);
+	 rect = new Sprite(20, 20, 400, 100,"k");
      rect = color = 'red';
-     cube = new Sprite(20, 20, 100, 100, 'd');
-     cube.color = 'blue';
+     sqaure = new Sprite(20, 20, 100, 100, 'd');
+     sqaure.color = 'fff000';
      world.gravity.y = 10;
 }
 function draw(){
-    background('lightgreen'); 
+    background('lightblue'); 
      if(kb.pressing(Space)){
        vel = +3;
      } else {
