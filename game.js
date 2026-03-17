@@ -2,6 +2,7 @@ function setup() {
   console.log("setup: fffffgfgggfggfgffggfg ");
   console.log("setup: dasdasfefsef");
   cnv = new Canvas(1390, 900);
+
   // timers for the up and space//
   timeUP = 3
   // the cube that the player uses and the floor of the game//
@@ -20,12 +21,13 @@ function setup() {
   spike.color = 'red';
   spike.vel.x = -3;
 
-  spike = new Sprite(1760, 545, 10, 30, 'k');
+  spike = new Sprite(1800, 545, 10, 30, 'k');
   spike.color = 'red';
   spike.vel.x = -3;
 
   spike.friction = 0;
 
+  console.log("setup: dghgnngndgfjgngjfn");
   //blocks that the cube can stand on//
   block = new Sprite(1520, 660, 40, 40, 'k');
   block.color = 'pink';
@@ -47,7 +49,7 @@ function setup() {
   block.color = 'pink';
   block.vel.x = -3;
 
-  block = new Sprite(1940, 540, 40, 40, 'k');
+  block = new Sprite(2000, 540, 40, 40, 'k');
   block.color = 'pink';
   block.vel.x = -3;
 
@@ -60,15 +62,18 @@ function setup() {
   //the progress bar and the numbers that you see how far you have gone//
   progressbar = new Sprite(width / 2, 30, 800, 50, 'k');
   progressbar.color = 'lightgreen';
-  number = new Sprite(240, 30, 70, 50, 'k');
-  number.color = 'grey';
+
   progress = new Sprite(width / 2, 30, 800, 50, 'k');
   progress.color = 'black';
-  // let barWidth = map(currentValue,0 ,100, 0 ,100)//
-  //shorterWidth//
+
+  //let barWidth = map(100,0 ,100, 0 ,100)//
+
   //gravity//
   world.gravity.y = 10;
-
+  //score//
+  var score = 0;
+  
+  
 }
 function draw() {
   background('green');
@@ -85,8 +90,14 @@ function draw() {
   }
   if (cube >= block, spike) {
     if (cube.vel.x = ('0')) {
-      progress.vel.x = +0.060
+      progress.vel.x = +0.100
+      progress.width = progress.width - 0.200
+      //progress = barWidth;//
     }
   }
-
-}
+   if (score = progress.vel.x ) {
+    score = score + 0.10;
+   } 
+   text('' + score ,  230, 20, 50);
+   textSize(30);
+  }
