@@ -1,3 +1,6 @@
+
+var score = 0;
+spikes =newgroup;
 function setup() {
   console.log("setup: fffffgfgggfggfgffggfg ");
   console.log("setup: dasdasfefsef");
@@ -69,7 +72,6 @@ function setup() {
   //gravity//
   world.gravity.y = 10;
   //score//
-  var score = 0;
   
 }
 function draw() {
@@ -91,8 +93,8 @@ function draw() {
       progress.width = progress.width - 0.200
     }
   }
-   if (score = progress.vel.x ) {
-    score = score + 0.01;
+   if (progress.vel.x > 0 ) {
+    score = score + 0.50;
    } 
    text('' + score ,  230, 20, 50);
    textSize(30);
