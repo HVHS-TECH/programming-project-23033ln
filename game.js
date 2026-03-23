@@ -1,13 +1,13 @@
 
 var score = 0;
-spikes =newgroup;
+spikes = newgroup;
 function setup() {
   console.log("setup: fffffgfgggfggfgffggfg ");
   console.log("setup: dasdasfefsef");
   cnv = new Canvas(1390, 900);
 
   // timers for the up and space//
-  var timeUP = 3
+  var time = 3
   // the cube that the player uses and the floor of the game//
   cube = new Sprite(width - 1300, 600, 40, 40, 'd');
   cube.color = 'blue';
@@ -16,6 +16,7 @@ function setup() {
   floor.color = 'cyan';
 
   //BLock that the cube can die on//
+  
   spike = new Sprite(900, 665, 10, 30, 'k');
   spike.color = 'red';
   spike.vel.x = -3;
@@ -56,6 +57,10 @@ function setup() {
   block.color = 'pink';
   block.vel.x = -3;
 
+  block = new Sprite(2120, 500, 40, 40, 'k');
+  block.color = 'pink';
+  block.vel.x = -3;
+
   block = new Sprite(2450, 580, 1500, 40, 'k');
   block.color = 'pink';
   block.vel.x = -3;
@@ -71,8 +76,7 @@ function setup() {
 
   //gravity//
   world.gravity.y = 10;
-  //score//
-  
+
 }
 function draw() {
   background('green');
@@ -80,12 +84,12 @@ function draw() {
     if (cube.vel.y = ('0')) {
       cube.vel.y = -8
     }
-    timeUP = timeUP = - 1
+    time = time = - 1
   } else if (kb.released('up')) {
     if (cube.vel.y = ('0')) {
       cube.vel.y = +1
     }
-    timeUP = 3
+    time = 3
   }
   if (cube >= block, spike) {
     if (cube.vel.x = ('0')) {
@@ -93,9 +97,11 @@ function draw() {
       progress.width = progress.width - 0.200
     }
   }
-   if (progress.vel.x > 0 ) {
-    score = score + 0.50;
-   } 
-   text('' + score ,  230, 20, 50);
-   textSize(30);
+  if (progress.vel.x > 0) {
+    score = score + 0.025;
   }
+  text('' + score, 235, 20, 50);
+  textSize(30);
+
+
+}
