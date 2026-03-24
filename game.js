@@ -16,7 +16,7 @@ function setup() {
   floor.color = 'cyan';
 
   //BLock that the cube can die on//
-  
+
   spike = new Sprite(900, 665, 10, 30, 'k');
   spike.color = 'red';
   spike.vel.x = -3;
@@ -80,6 +80,7 @@ function setup() {
 }
 function draw() {
   background('green');
+
   if (kb.pressing('up')) {
     if (cube.vel.y = ('0')) {
       cube.vel.y = -8
@@ -91,17 +92,28 @@ function draw() {
     }
     time = 3
   }
+
   if (cube >= block, spike) {
     if (cube.vel.x = ('0')) {
       progress.vel.x = +0.100
       progress.width = progress.width - 0.200
     }
   }
+
   if (progress.vel.x > 0) {
     score = score + 0.025;
   }
   text('' + score, 235, 20, 50);
   textSize(30);
 
+  if (score > 100) {
+    showendscreen()
+  }
 
+}
+function showendscreen() {
+
+  screen = new Sprite(height / 2, width / 2, 120, 100, 'k');
+  freeze();
+  
 }
