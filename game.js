@@ -1,6 +1,9 @@
 
+
+let lives = 2;
 var score = 0;
-spikes = newgroup;
+var spikes = newgroup;
+var cubeTouching = 1;
 function setup() {
   console.log("setup: fffffgfgggfggfgffggfg ");
   console.log("setup: dasdasfefsef");
@@ -30,6 +33,7 @@ function setup() {
   spike.vel.x = -3;
 
   spike.friction = 0;
+
 
   console.log("setup: dghgnngndgfjgngjfn");
   //blocks that the cube can stand on//
@@ -77,6 +81,14 @@ function setup() {
   //gravity//
   world.gravity.y = 10;
 
+//something for the lives//
+livesdisplay = new Sprite()
+livesdisplay.text = "lives:" + lives;
+  
+for (i = 3 , i <4 ) {
+   
+}
+
 }
 function draw() {
   background('green');
@@ -85,12 +97,10 @@ function draw() {
     if (cube.vel.y = ('0')) {
       cube.vel.y = -8
     }
-    time = time = - 1
   } else if (kb.released('up')) {
     if (cube.vel.y = ('0')) {
       cube.vel.y = +1
     }
-    time = 3
   }
 
   if (cube >= block, spike) {
@@ -111,10 +121,17 @@ function draw() {
   }
 
 }
+
 function showendscreen() {
 
   screen = new Sprite(height / 2, width / 2, 120, 100, 'k');
-  text('you lose. your score  ' + score, height / 2, width / 2, 120, 100)
+  text('you win your score  ' + score, height / 2, width / 2, 120, 100)
   freeze();
   
+}
+function spike(){
+  if (spiketouching = cube) {
+    freeze();
+    text('you lose. your score' + score, width /2, height /2, 120,100);
+  }
 }
