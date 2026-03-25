@@ -114,6 +114,7 @@ function draw() {
 function showendscreen() {
 
   screen = new Sprite(height / 2, width / 2, 120, 100, 'k');
+  text('you lose. your score  ' + score, height / 2, width / 2, 120, 100)
   freeze();
   
 }
