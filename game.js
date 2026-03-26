@@ -1,5 +1,9 @@
 
 
+
+
+
+let gameState = 'playing';
 let lives = 2;
 var score = 0;
 var spikes = newgroup;
@@ -81,17 +85,15 @@ function setup() {
   //gravity//
   world.gravity.y = 10;
 
-//something for the lives//
-livesdisplay = new Sprite()
-livesdisplay.text = "lives:" + lives;
+//something for the dual gamemode//
+
   
-for (i = 3 , i <4 ) {
-   
-}
+
 
 }
 function draw() {
   background('green');
+
 
   if (kb.pressing('up')) {
     if (cube.vel.y = ('0')) {
@@ -120,18 +122,27 @@ function draw() {
     showendscreen()
   }
 
+ 
 }
+
+
+
 
 function showendscreen() {
 
   screen = new Sprite(height / 2, width / 2, 120, 100, 'k');
-  text('you win your score  ' + score, height / 2, width / 2, 120, 100)
+  text('level finished ' ,  560, 450, 120, 100)
+  
   freeze();
   
 }
-function spike(){
-  if (spiketouching = cube) {
-    freeze();
-    text('you lose. your score' + score, width /2, height /2, 120,100);
+
+function keyPressed() {
+  if (key === 'p' || key === 'P') {
+    if (gameState === "playing") {
+      gameState = "paused";
+    } else {
+      gameState = "playing";
+    }
   }
 }
