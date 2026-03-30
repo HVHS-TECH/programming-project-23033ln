@@ -2,12 +2,12 @@
 
 
 
-
+let cubes;
 let gameState = 'playing';
 let lives = 2;
 var score = 0;
 var spikes = newgroup;
-var cubeTouching = 1;
+let cubeTouching = 1;
 function setup() {
   console.log("setup: fffffgfgggfggfgffggfg ");
   console.log("setup: dasdasfefsef");
@@ -23,10 +23,10 @@ function setup() {
   floor.color = 'cyan';
 
   //BLock that the cube can die on//
-
-  spike = new Sprite(900, 665, 10, 30, 'k');
-  spike.color = 'red';
-  spike.vel.x = -3;
+  
+  spikes = new Sprite(900, 665, 10, 30, 'k');
+  spikes.color = 'red';
+  spikes.vel.x = -3;
 
   spike = new Sprite(940, 665, 10, 30, 'k');
   spike.color = 'red';
@@ -85,11 +85,6 @@ function setup() {
   //gravity//
   world.gravity.y = 10;
 
-//something for the dual gamemode//
-
-  
-
-
 }
 function draw() {
   background('green');
@@ -121,8 +116,13 @@ function draw() {
   if (score > 100) {
     showendscreen()
   }
-
  
+ if (cube) {
+  lives--;
+ }
+ for (i = 0; i < lives; i++) {
+    rect(40 * i, 40, 55, 55);
+  }
 }
 
 
