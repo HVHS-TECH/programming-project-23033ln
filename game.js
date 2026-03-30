@@ -74,8 +74,8 @@ function setup() {
   block.vel.x = -3;
 
   block.friction = 0;
-
-  //the progress bar and the numbers that you see how far you have gone//
+ 
+  //the progress bar and dhdghdjghdfhgdfjhdthe numbers that you see how far you have gone//
   progressbar = new Sprite(width / 2, 30, 800, 50, 'k');
   progressbar.color = 'lightgreen';
 
