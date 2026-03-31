@@ -4,9 +4,8 @@
 
 let cubes;
 let gameState = 'playing';
-let lives = 2;
+let lives = 1;
 var score = 0;
-var spikes = newgroup;
 let cubeTouching = 1;
 function setup() {
   console.log("setup: fffffgfgggfggfgffggfg ");
@@ -23,23 +22,37 @@ function setup() {
   floor.color = 'cyan';
 
   //BLock that the cube can die on//
+  for (i = 0; i < 1; i++) {
+    spikesGroup = new Group();
+
+    spikes = new Sprite(900, 665, 10, 30, 'k');
+    spikes.color = 'red';
+    spikes.vel.x = -3;
+
+    spikes = new Sprite(940, 665, 10, 30, 'k');
+    spikes.color = 'red';
+    spikes.vel.x = -3;
   
-  spikes = new Sprite(900, 665, 10, 30, 'k');
-  spikes.color = 'red';
-  spikes.vel.x = -3;
+  
+  
+    spikes = new Sprite(1800, 545, 10, 30, 'k');
+    spikes.color = 'red';
+    spikes.vel.x = -3;
 
-  spike = new Sprite(940, 665, 10, 30, 'k');
-  spike.color = 'red';
-  spike.vel.x = -3;
-
-  spike = new Sprite(1800, 545, 10, 30, 'k');
-  spike.color = 'red';
-  spike.vel.x = -3;
-
-  spike.friction = 0;
+    spikes = new Sprite(1820, 545, 10, 30, 'k');
+    spikes.color = 'red';
+    spikes.vel.x = -3;
 
 
-  console.log("setup: dghgnngndgfjgngjfn");
+    spikes.friction = 0;
+    spikesGroup.add(spikes);
+
+    spikesGroup.collides(cube, func2Call);
+  }
+
+
+
+ 
   //blocks that the cube can stand on//
   block = new Sprite(1520, 660, 40, 40, 'k');
   block.color = 'pink';
@@ -65,7 +78,9 @@ function setup() {
   block.color = 'pink';
   block.vel.x = -3;
 
-  block = new Sprite(2120, 500, 40, 40, 'k');
+
+  console.log("setup: dghgnngndgfjgngjfn");
+  block = new Sprite(2400, 498, 40, 40, 'k');
   block.color = 'pink';
   block.vel.x = -3;
 
@@ -73,8 +88,12 @@ function setup() {
   block.color = 'pink';
   block.vel.x = -3;
 
+  block = new Sprite(3400, 620, 500, 40, 'k');
+  block.color = 'pink';
+  block.vel.x = -3;
+
   block.friction = 0;
- 
+
   //the progress bar and dhdghdjghdfhgdfjhdthe numbers that you see how far you have gone//
   progressbar = new Sprite(width / 2, 30, 800, 50, 'k');
   progressbar.color = 'lightgreen';
@@ -84,6 +103,9 @@ function setup() {
 
   //gravity//
   world.gravity.y = 10;
+
+
+
 
 }
 function draw() {
@@ -100,7 +122,7 @@ function draw() {
     }
   }
 
-  if (cube >= block, spike) {
+  if (cube >= block, spikes) {
     if (cube.vel.x = ('0')) {
       progress.vel.x = +0.100
       progress.width = progress.width - 0.200
@@ -116,25 +138,33 @@ function draw() {
   if (score > 100) {
     showendscreen()
   }
- 
- if (cube) {
-  lives--;
- }
- for (i = 0; i < lives; i++) {
-    rect(40 * i, 40, 55, 55);
+
+  for (i = 0; i < lives; i++) {
+    rect(50 * i, 50, 55, 55);
+
   }
 }
 
 
 
 
+function func2Call(cube, spikes) {
+  console.log("setup:oww ");
+  if (cube.collides, spikes) {
+    lives--;
+  }
+  if (lives = '0') {
+    showdeathscreen();
+  }
+}
+
 function showendscreen() {
 
   screen = new Sprite(height / 2, width / 2, 120, 100, 'k');
-  text('level finished ' ,  560, 450, 120, 100)
-  
+  text('level finished score:', 560, 450, 120, 100)
+
   freeze();
-  
+
 }
 
 function keyPressed() {
@@ -145,4 +175,12 @@ function keyPressed() {
       gameState = "playing";
     }
   }
+
+}
+
+
+function showdeathscreen() {
+  text('you died  ', 560, 450, 120, 100)
+  textSize(100);
+  freeze();
 }
