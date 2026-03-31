@@ -29,30 +29,25 @@ function setup() {
     spikes.color = 'red';
     spikes.vel.x = -3;
 
-    spikes = new Sprite(940, 665, 10, 30, 'k');
-    spikes.color = 'red';
-    spikes.vel.x = -3;
-  
-  
-  
-    spikes = new Sprite(1800, 545, 10, 30, 'k');
+    spikes = new Sprite(1000, 665, 10, 30, 'k');
     spikes.color = 'red';
     spikes.vel.x = -3;
 
-    spikes = new Sprite(1820, 545, 10, 30, 'k');
+
+    spikes = new Sprite(950, 665, 10, 30, 'k');
     spikes.color = 'red';
     spikes.vel.x = -3;
-
 
     spikes.friction = 0;
     spikesGroup.add(spikes);
+
 
     spikesGroup.collides(cube, func2Call);
   }
 
 
 
- 
+  console.log("setup: dghgnngndgfjgngjfn");
   //blocks that the cube can stand on//
   block = new Sprite(1520, 660, 40, 40, 'k');
   block.color = 'pink';
@@ -78,17 +73,11 @@ function setup() {
   block.color = 'pink';
   block.vel.x = -3;
 
-
-  console.log("setup: dghgnngndgfjgngjfn");
-  block = new Sprite(2400, 498, 40, 40, 'k');
+  block = new Sprite(2120, 500, 40, 40, 'k');
   block.color = 'pink';
   block.vel.x = -3;
 
   block = new Sprite(2450, 580, 1500, 40, 'k');
-  block.color = 'pink';
-  block.vel.x = -3;
-
-  block = new Sprite(3400, 620, 500, 40, 'k');
   block.color = 'pink';
   block.vel.x = -3;
 
@@ -151,7 +140,7 @@ function draw() {
 function func2Call(cube, spikes) {
   console.log("setup:oww ");
   if (cube.collides, spikes) {
-    lives--;
+   lives--;
   }
   if (lives = '0') {
     showdeathscreen();
@@ -162,7 +151,6 @@ function showendscreen() {
 
   screen = new Sprite(height / 2, width / 2, 120, 100, 'k');
   text('level finished score:', 560, 450, 120, 100)
-
   freeze();
 
 }
