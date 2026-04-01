@@ -27,20 +27,74 @@ function setup() {
     spikes = new Sprite(900, 665, 10, 30, 'k');
     spikes.color = 'red';
     spikes.vel.x = -3;
-
-    spikes = new Sprite(1000, 665, 10, 30, 'k');
-    spikes.color = 'red';
-    spikes.vel.x = -3;
-
+    spikesGroup.add(spikes);
 
     spikes = new Sprite(950, 665, 10, 30, 'k');
     spikes.color = 'red';
     spikes.vel.x = -3;
-
-    spikes.friction = 0;
     spikesGroup.add(spikes);
 
+    spikes = new Sprite(1500, 665, 10, 30, 'k');
+    spikes.color = 'red';
+    spikes.vel.x = -3;
+    spikesGroup.add(spikes);
 
+    spikes = new Sprite(2100, 665, 10, 30, 'k');
+    spikes.color = 'red';
+    spikes.vel.x = -3;
+    spikesGroup.add(spikes);
+
+    spikes = new Sprite(2600, 665, 10, 30, 'k');
+    spikes.color = 'red';
+    spikes.vel.x = -3;
+    spikesGroup.add(spikes);
+
+    spikes = new Sprite(3200, 665, 10, 30, 'k');
+    spikes.color = 'red';
+    spikes.vel.x = -3;
+    spikesGroup.add(spikes);
+
+    spikes = new Sprite(3600, 665, 10, 30, 'k');
+    spikes.color = 'red';
+    spikes.vel.x = -3;
+    spikesGroup.add(spikes);
+
+    spikes = new Sprite(4500, 665, 10, 30, 'k');
+    spikes.color = 'red';
+    spikes.vel.x = -3;
+    spikesGroup.add(spikes);
+
+    spikes = new Sprite(5000, 515, 10, 30, 'k');
+    spikes.color = 'red';
+    spikes.vel.x = -3;
+    spikesGroup.add(spikes);
+
+    spikes = new Sprite(7500, 665, 10, 30, 'k');
+    spikes.color = 'red';
+    spikes.vel.x = -3;
+    spikesGroup.add(spikes);
+
+    spikes = new Sprite(9500, 665, 10, 30, 'k');
+    spikes.color = 'red';
+    spikes.vel.x = -3;
+    spikesGroup.add(spikes);
+
+    spikes = new Sprite(10000, 665, 10, 30, 'k');
+    spikes.color = 'red';
+    spikes.vel.x = -3;
+    spikesGroup.add(spikes);
+
+    spikes = new Sprite(11500, 665, 10, 30, 'k');
+    spikes.color = 'red';
+    spikes.vel.x = -3;
+    spikesGroup.add(spikes);
+
+    spikes = new Sprite(13500, 665, 10, 30, 'k');
+    spikes.color = 'red';
+    spikes.vel.x = -3;
+    spikesGroup.add(spikes);
+
+    spikes.friction = 0;
     spikesGroup.collides(cube, func2Call);
   }
 
@@ -80,6 +134,59 @@ function setup() {
   block.color = 'pink';
   block.vel.x = -3;
 
+  // --- SECTION 2: THE TRIPLE CLIMB (3000 - 6000) ---
+  block = new Sprite(3500, 660, 40, 40, 'k');
+  block.color = 'pink';
+  block.vel.x = -3;
+
+  block = new Sprite(4000, 600, 40, 40, 'k');
+  block.color = 'pink';
+  block.vel.x = -3;
+
+
+  block = new Sprite(5000, 550, 100, 40, 'k');
+  block.color = 'pink';
+  block.vel.x = -3;
+
+
+  // --- SECTION 3: FLOATING MAZE (6000 - 9000) ---
+  block = new Sprite(6500, 500, 40, 40, 'k');
+  block.color = 'pink';
+  block.vel.x = -3;
+
+  block = new Sprite(7000, 450, 40, 40, 'k');
+  block.color = 'pink';
+  block.vel.x = -3;
+
+  block = new Sprite(8000, 400, 40, 40, 'k');
+  block.color = 'pink';
+  block.vel.x = -3;
+
+  block = new Sprite(8500, 500, 200, 40, 'k');
+  block.color = 'pink';
+  block.vel.x = -3;
+
+  // --- SECTION 4: THE LONG RUN (9000 - 12000) ---
+
+  block = new Sprite(11000, 640, 40, 80, 'k');
+  block.color = 'pink';
+  block.vel.x = -3;
+
+
+  // --- SECTION 5: FINAL GAUNTLET & FINISH (12000 - 15000) ---
+  block = new Sprite(12500, 500, 40, 40, 'k');
+  block.color = 'pink';
+  block.vel.x = -3;
+
+  block = new Sprite(13000, 450, 40, 40, 'k');
+  block.color = 'pink';
+  block.vel.x = -3;
+
+
+
+
+
+
   block.friction = 0;
 
   //the progress bar and dhdghdjghdfhgdfjhdthe numbers that you see how far you have gone//
@@ -99,14 +206,25 @@ function setup() {
 function draw() {
   background('green');
 
+   if (cube.colliding(block)) {
+    if (cube.x < block.x - 10) { 
+        func2Call(); 
+    }
+  }
+  if (cube.x < 0) {
+    showdeathscreen();
+  }
 
   if (kb.pressing('up')) {
-    if (cube.vel.y = ('0')) {
-      cube.vel.y = -8
+    if (Math.abs(cube.vel.y) < 0.01) {
+      cube.vel.y = -7
+       cube.rotationSpeed = 5;
     }
   } else if (kb.released('up')) {
-    if (cube.vel.y = ('0')) {
+    if (Math.abs(cube.vel.y) < 0.01) {
       cube.vel.y = +1
+       cube.rotationSpeed = 0; 
+    cube.rotation = Math.round(cube.rotation / 90) * 90;
     }
   }
 
@@ -139,7 +257,7 @@ function draw() {
 function func2Call(cube, spikes) {
   console.log("setup:oww ");
   if (cube.collides, spikes) {
-   lives--;
+    lives--;
   }
   if (lives = '0') {
     showdeathscreen();
@@ -147,27 +265,28 @@ function func2Call(cube, spikes) {
 }
 
 function showendscreen() {
-
-  screen = new Sprite(height / 2, width / 2, 120, 100, 'k');
-  text('level finished score:', 560, 450, 120, 100)
-  freeze();
-
+  fill(0);
+  textSize(50);
+  text("Level Finished! Score: " + Math.floor(score), width / 2 - 200, height / 2);
+  noLoop();
 }
 
 function keyPressed() {
   if (key === 'p' || key === 'P') {
-    if (gameState === "playing") {
-      gameState = "paused";
-    } else {
-      gameState = "playing";
+    if (gameState === 'playing') {
+      gameState = 'paused';
+      noLoop();
+    } else if (gameState === 'paused') {
+      gameState = 'playing';
+      loop();
     }
   }
-
 }
 
 
 function showdeathscreen() {
-  text('you died  ', 560, 450, 120, 100)
+  fill(0);
   textSize(100);
-  freeze();
+  text("You Died", width / 2 - 150, height / 2);
+  noLoop();
 }
