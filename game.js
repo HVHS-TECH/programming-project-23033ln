@@ -6,7 +6,6 @@ let cubes;
 let gameState = 'playing';
 let lives = 1;
 var score = 0;
-let cubeTouching = 1;
 function setup() {
   console.log("setup: fffffgfgggfggfgffggfg ");
   console.log("setup: dasdasfefsef");
